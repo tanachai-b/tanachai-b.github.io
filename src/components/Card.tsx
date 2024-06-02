@@ -1,5 +1,6 @@
 import cx from "classnames";
 import { ReactNode } from "react";
+import { FlexCol } from "./commons";
 
 export function Card({
   title,
@@ -11,7 +12,7 @@ export function Card({
   children: ReactNode;
 }) {
   return (
-    <div
+    <FlexCol
       className={cx(
         "w-[500px]",
         "max-w-full",
@@ -21,15 +22,12 @@ export function Card({
         "border-[1px]",
         "rounded-[10px]",
 
-        "flex",
-        "flex-col",
-
         "overflow-hidden",
       )}
     >
       <CardHeader title={title} subtitle={subtitle} />
       <CardBody>{children}</CardBody>
-    </div>
+    </FlexCol>
   );
 }
 
@@ -41,18 +39,10 @@ function CardHeader({
   subtitle: ReactNode;
 }) {
   return (
-    <div
-      className={cx(
-        "p-[30px]",
-
-        "flex",
-        "flex-col",
-        "items-center",
-      )}
-    >
+    <FlexCol className={cx("p-[30px]", "items-center")}>
       <div className={cx("text-[30px]")}>{title}</div>
       <div className={cx("text-[13px]", "text-[#606060]")}>{subtitle}</div>
-    </div>
+    </FlexCol>
   );
 }
 

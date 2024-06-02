@@ -1,7 +1,7 @@
 import cx from "classnames";
 import { useEffect, useRef, useState } from "react";
 
-import { Icon, Link } from "./commons";
+import { FlexCen, FlexCol, FlexRow, Icon, Link } from "./commons";
 
 export function DataRow({
   icon,
@@ -38,33 +38,18 @@ export function DataRow({
       className={cx(
         "flex",
         "flex-row",
+        { "flex-col": isVertical },
 
         "mb-[10px]",
-
-        { "flex-col": isVertical },
       )}
     >
-      <div
-        className={cx(
-          "flex-grow",
-
-          "flex",
-          "flex-row",
-        )}
-      >
+      <FlexRow className={cx("flex-grow")}>
         <RowIcon icon={icon} color={color} />
 
         <RowDetails title={title} subtitle={`/${path}`} />
-      </div>
+      </FlexRow>
 
-      <div
-        className={cx(
-          "flex",
-          "flex-row",
-
-          { "pl-[30px]": isVertical },
-        )}
-      >
+      <FlexRow className={cx({ "pl-[30px]": isVertical })}>
         <RowLink
           label="GitHub"
           href={`https://github.com/tanachai-b/${path}`}
@@ -74,68 +59,42 @@ export function DataRow({
           label="Website"
           href={`https://tanachai-b.github.io/${path}`}
         />
-      </div>
+      </FlexRow>
     </div>
   );
 }
 
 function RowIcon({ icon, color }: { icon: string; color: string }) {
   return (
-    <>
-      <div
-        className={cx(
-          "flex",
-          "items-center",
-          "justify-center",
-
-          "p-[5px]",
-
-          "text-[20px]",
-        )}
-        style={{ color }}
-      >
-        <Icon icon={icon} />
-      </div>
-    </>
+    <FlexCen className={cx("p-[5px]", "text-[20px]")} style={{ color }}>
+      <Icon icon={icon} />
+    </FlexCen>
   );
 }
 
 function RowDetails({ title, subtitle }: { title: string; subtitle: string }) {
   return (
-    <div
-      className={cx(
-        "flex-grow",
-
-        "flex",
-        "flex-col",
-
-        "p-[5px]",
-      )}
-    >
+    <FlexCol className={cx("flex-grow", "p-[5px]")}>
       <div>{title}</div>
 
       <div className={cx("text-[#606060]", "text-[13px]", "italic")}>
         {subtitle}
       </div>
-    </div>
+    </FlexCol>
   );
 }
 
 function RowLink({ label, href }: { label: string; href: string }) {
   return (
-    <div
+    <FlexCen
       className={cx(
         "w-[80px]",
-
-        "flex",
-        "items-center",
-        "justify-center",
 
         "text-[#606060]",
         "text-[13px]",
       )}
     >
       <Link label={label} href={href} />
-    </div>
+    </FlexCen>
   );
 }

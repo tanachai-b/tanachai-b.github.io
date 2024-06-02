@@ -1,10 +1,25 @@
-import { Card, CardHeader, Container, DataHeader, DataRow } from "./components";
+import {
+  Card,
+  CardHeader,
+  CardHeaderLink,
+  Container,
+  DataHeader,
+  DataRow,
+} from "./components";
 
 export default function App() {
   return (
     <Container>
       <Card>
-        <CardHeader title="tanachai-b" />
+        <CardHeader
+          title="tanachai-b"
+          subtitle={
+            <CardHeaderLink
+              label="github.com/tanachai-b"
+              href="https://github.com/tanachai-b"
+            />
+          }
+        />
 
         <DataHeader title="Vite.js - React - Typescript" />
 

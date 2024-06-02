@@ -8,96 +8,73 @@ export default function App() {
 
         <DataHeader title="Vite.js - React - Typescript" />
 
-        <GitRow
+        <DataRow
           icon="sticky_note_2"
           color="#ffd000"
-          label="Sticky Notes"
-          gitPath="sticky-notes"
+          title="Sticky Notes"
+          path="sticky-notes"
         />
 
         <DataHeader title="Next.js - React - Typescript" />
 
-        <GitRow
+        <DataRow
           icon="account_balance"
           color="#00c080"
-          label="Personal Finance"
-          gitPath="personal-finance"
+          title="Personal Finance"
+          path="personal-finance"
         />
-        <GitRow
+        <DataRow
           icon="watch"
           color="#80ff00"
-          label="Watch Face"
-          gitPath="watch-face"
+          title="Watch Face"
+          path="watch-face"
         />
-        <GitRow
+        <DataRow
           icon="palette"
           color="#ff6000"
-          label="Color Palette"
-          gitPath="color-palette"
+          title="Color Palette"
+          path="color-palette"
         />
-        <GitRow
+        <DataRow
           icon="keyboard"
           color="#6000ff"
-          label="Thai Keyboard"
-          gitPath="thai-keyboard"
+          title="Thai Keyboard"
+          path="thai-keyboard"
         />
-        <GitRow
+        <DataRow
           icon="calendar_month"
           color="#ff40e0"
-          label="Next.js"
-          gitPath="calendar"
+          title="Next.js"
+          path="calendar"
         />
 
         <DataHeader title="Plain Javscript" />
 
-        <GitRow
+        <DataRow
           icon="deployed_code"
           color="#00c0ff"
-          label="Equations 3D"
-          gitPath="equations-3d"
+          title="Equations 3D"
+          path="equations-3d"
         />
-        <GitRow
+        <DataRow
           icon="rocket_launch"
           color="#0000ff"
-          label="Starship Command"
-          gitPath="starship-command"
+          title="Starship Command"
+          path="starship-command"
         />
-        <GitRow
+        <DataRow
           icon="public"
           color="#6000ff"
-          label="Orbit Lines"
-          gitPath="orbit-lines"
+          title="Orbit Lines"
+          path="orbit-lines"
         />
-        <GitRow
+        <DataRow
           icon="directions_car"
           color="#ff0000"
-          label="Car Simulator"
-          gitPath="car-simulator"
+          title="Car Simulator"
+          path="car-simulator"
         />
       </Card>
     </Container>
-  );
-}
-
-function GitRow({
-  icon,
-  color,
-  label,
-  gitPath,
-}: {
-  icon: string;
-  color: string;
-  label: string;
-  gitPath: string;
-}) {
-  return (
-    <DataRow
-      icon={icon}
-      color={color}
-      title={label}
-      subtitle={gitPath}
-      gitHub={`https://github.com/tanachai-b/${gitPath}`}
-      website={`https://tanachai-b.github.io/${gitPath}`}
-    />
   );
 }

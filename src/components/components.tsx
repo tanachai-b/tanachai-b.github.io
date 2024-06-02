@@ -27,16 +27,20 @@ export function Card({ children }: { children: ReactNode }) {
   return (
     <div
       className={cx(
+        "m-[10px]",
         "w-[500px]",
-        "p-[30px]",
 
         "bg-[#181818]",
         "border-[#303030]",
         "border-[1px]",
         "rounded-[10px]",
 
+        "p-[30px]",
+
         "flex",
         "flex-col",
+
+        "overflow-auto",
       )}
     >
       {children}

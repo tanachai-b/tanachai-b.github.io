@@ -1,9 +1,11 @@
 import cx from "classnames";
 import { ReactNode } from "react";
 
+import { FlexCen } from "./commons";
+
 export function Container({ children }: { children: ReactNode }) {
   return (
-    <div
+    <FlexCen
       className={cx(
         "h-full",
         "p-[10px]",
@@ -13,14 +15,11 @@ export function Container({ children }: { children: ReactNode }) {
         "text-[#c0c0c0]",
         "text-[15px]",
 
-        "flex",
         "flex-col",
-        "items-center",
-        "justify-center",
       )}
     >
       {children}
-    </div>
+    </FlexCen>
   );
 }
 

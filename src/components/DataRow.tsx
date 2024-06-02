@@ -53,7 +53,7 @@ function RowDetails({ title, subtitle }: { title: string; subtitle: string }) {
     <div className={cx("flex-grow", "flex", "flex-col", "p-[5px]")}>
       <div>{title}</div>
 
-      <div className={cx("text-[#606060]", "italic", "text-[13px]")}>
+      <div className={cx("text-[#606060]", "text-[13px]", "italic")}>
         {subtitle}
       </div>
     </div>
@@ -69,16 +69,22 @@ function RowLink({ label, href }: { label: string; href: string }) {
         "flex",
         "items-center",
         "justify-center",
-
-        "text-[13px]",
-        "text-[#606060]",
-        "hover:font-bold",
       )}
     >
       <a
         href={href}
         target="_blank"
-        className={cx("flex", "flex-row", "items-center", "gap-[2px]")}
+        className={cx(
+          "flex",
+          "flex-row",
+          "items-center",
+
+          "gap-[2px]",
+
+          "text-[13px]",
+          "text-[#606060]",
+          "hover:font-bold",
+        )}
       >
         {label}
         <Icon icon="open_in_new" />

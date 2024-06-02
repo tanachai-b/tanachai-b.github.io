@@ -14,8 +14,6 @@ export function Link({ label, href }: { label: string; href: string }) {
 
         "gap-[2px]",
 
-        "text-[13px]",
-        "text-[#606060]",
         "hover:font-bold",
       )}
     >

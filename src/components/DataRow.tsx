@@ -69,6 +69,9 @@ function RowLink({ label, href }: { label: string; href: string }) {
         "flex",
         "items-center",
         "justify-center",
+
+        "text-[#606060]",
+        "text-[13px]",
       )}
     >
       <Link label={label} href={href} />

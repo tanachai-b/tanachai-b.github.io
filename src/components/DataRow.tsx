@@ -1,6 +1,6 @@
 import cx from "classnames";
 
-import { Icon } from "./commons";
+import { Icon, Link } from "./commons";
 
 export function DataRow({
   icon,
@@ -71,24 +71,7 @@ function RowLink({ label, href }: { label: string; href: string }) {
         "justify-center",
       )}
     >
-      <a
-        href={href}
-        target="_blank"
-        className={cx(
-          "flex",
-          "flex-row",
-          "items-center",
-
-          "gap-[2px]",
-
-          "text-[13px]",
-          "text-[#606060]",
-          "hover:font-bold",
-        )}
-      >
-        {label}
-        <Icon icon="open_in_new" />
-      </a>
+      <Link label={label} href={href} />
     </div>
   );
 }

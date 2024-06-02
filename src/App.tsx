@@ -4,13 +4,13 @@ export default function App() {
   return (
     <Container>
       <Card>
-        <CardHeader label="tanachai-b" />
+        <CardHeader title="tanachai-b" />
 
-        <DataHeader label="Vite.js - React - Typescript" />
+        <DataHeader title="Vite.js - React - Typescript" />
 
         <GitRow label="Sticky Notes" gitPath="sticky-notes" />
 
-        <DataHeader label="Next.js - React - Typescript" />
+        <DataHeader title="Next.js - React - Typescript" />
 
         <GitRow label="Personal Finance" gitPath="personal-finance" />
         <GitRow label="Watch Face" gitPath="watch-face" />
@@ -18,7 +18,7 @@ export default function App() {
         <GitRow label="Thai Keyboard" gitPath="thai-keyboard" />
         <GitRow label="Next.js" gitPath="calendar" />
 
-        <DataHeader label="Plain Javscript" />
+        <DataHeader title="Plain Javscript" />
 
         <GitRow label="Equations 3D" gitPath="equations-3d" />
         <GitRow label="Starship Command" gitPath="starship-command" />
@@ -32,7 +32,7 @@ export default function App() {
 function GitRow({ label, gitPath }: { label: string; gitPath: string }) {
   return (
     <DataRow
-      label={label}
+      title={label}
       subtitle={gitPath}
       website={`https://tanachai-b.github.io/${gitPath}`}
       gitHub={`https://github.com/tanachai-b/${gitPath}`}

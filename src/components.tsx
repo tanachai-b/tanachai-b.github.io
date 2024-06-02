@@ -1,10 +1,10 @@
-import classnames from "classnames";
+import cx from "classnames";
 import { ReactNode } from "react";
 
 export function Container({ children }: { children: ReactNode }) {
   return (
     <div
-      className={classnames(
+      className={cx(
         "h-full",
 
         "bg-[#101010]",
@@ -27,7 +27,7 @@ export function Container({ children }: { children: ReactNode }) {
 export function Card({ children }: { children: ReactNode }) {
   return (
     <div
-      className={classnames(
+      className={cx(
         "w-[500px]",
 
         "bg-[#181818]",
@@ -45,57 +45,52 @@ export function Card({ children }: { children: ReactNode }) {
   );
 }
 
-export function CardHeader({ label }: { label: string }) {
+export function CardHeader({ title }: { title: string }) {
   return (
     <div
-      className={classnames(
+      className={cx(
         "pb-[20px]",
 
         "text-[30px]",
         "text-center",
 
-        "text-[#808080]",
+        "text-[#606060]",
       )}
     >
-      {label}
+      {title}
     </div>
   );
 }
 
-export function DataHeader({ label }: { label: string }) {
+export function DataHeader({ title }: { title: string }) {
   return (
     <div
-      className={classnames(
+      className={cx(
         "pt-[30px]",
         "pb-[20px]",
 
         "font-bold",
       )}
     >
-      {label}
+      {title}
     </div>
   );
 }
 
 export function DataRow({
-  label,
+  title,
   subtitle,
   website,
   gitHub,
 }: {
-  label: string;
+  title: string;
   subtitle: string;
   website: string;
   gitHub: string;
 }) {
   return (
-    <div className={classnames("flex", "flex-row")}>
-      <div className={classnames("flex-grow", "flex", "flex-col", "p-[5px]")}>
-        <div>{label}</div>
-        <div className={classnames("text-[#606060]", "italic", "text-[13px]")}>
-          {subtitle}
-        </div>
-      </div>
+    <div className={cx("flex", "flex-row")}>
+      <TitleSubtitle title={title} subtitle={subtitle} />
 
       <Link label="Website" href={website} />
 
@@ -104,10 +99,28 @@ export function DataRow({
   );
 }
 
+function TitleSubtitle({
+  title,
+  subtitle,
+}: {
+  title: string;
+  subtitle: string;
+}) {
+  return (
+    <div className={cx("flex-grow", "flex", "flex-col", "p-[5px]")}>
+      <div>{title}</div>
+
+      <div className={cx("text-[#606060]", "italic", "text-[13px]")}>
+        {subtitle}
+      </div>
+    </div>
+  );
+}
+
 function Link({ label, href }: { label: string; href: string }) {
   return (
     <div
-      className={classnames(
+      className={cx(
         "w-[70px]",
 
         "flex",
@@ -115,10 +128,10 @@ function Link({ label, href }: { label: string; href: string }) {
         "justify-center",
 
         "text-[13px]",
-        "text-[#808080]",
+        "text-[#606060]",
       )}
     >
-      <a className={classnames("hover:font-bold")} href={href} target="_blank">
+      <a className={cx("hover:font-bold")} href={href} target="_blank">
         {label}
       </a>
     </div>

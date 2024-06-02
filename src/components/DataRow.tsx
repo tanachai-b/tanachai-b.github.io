@@ -1,4 +1,5 @@
 import cx from "classnames";
+import { useEffect, useRef, useState } from "react";
 
 import { Icon, Link } from "./commons";
 
@@ -13,15 +14,67 @@ export function DataRow({
   title: string;
   path: string;
 }) {
+  const ref = useRef<HTMLDivElement>(null);
+
+  const [isVertical, setIsVertical] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (!ref.current) return;
+
+    const resizeObserver = new ResizeObserver(() => {
+      if (!ref.current) return;
+      const { width } = ref.current.getBoundingClientRect() ?? {};
+
+      setIsVertical(width < 350);
+    });
+    resizeObserver.observe(ref.current);
+
+    return () => resizeObserver.disconnect();
+  }, []);
+
   return (
-    <div className={cx("flex", "flex-row")}>
-      <RowIcon icon={icon} color={color} />
+    <div
+      ref={ref}
+      className={cx(
+        "flex",
+        "flex-row",
 
-      <RowDetails title={title} subtitle={`/${path}`} />
+        "mb-[10px]",
 
-      <RowLink label="GitHub" href={`https://github.com/tanachai-b/${path}`} />
+        { "flex-col": isVertical },
+      )}
+    >
+      <div
+        className={cx(
+          "flex-grow",
 
-      <RowLink label="Website" href={`https://tanachai-b.github.io/${path}`} />
+          "flex",
+          "flex-row",
+        )}
+      >
+        <RowIcon icon={icon} color={color} />
+
+        <RowDetails title={title} subtitle={`/${path}`} />
+      </div>
+
+      <div
+        className={cx(
+          "flex",
+          "flex-row",
+
+          { "pl-[30px]": isVertical },
+        )}
+      >
+        <RowLink
+          label="GitHub"
+          href={`https://github.com/tanachai-b/${path}`}
+        />
+
+        <RowLink
+          label="Website"
+          href={`https://tanachai-b.github.io/${path}`}
+        />
+      </div>
     </div>
   );
 }
@@ -32,7 +85,6 @@ function RowIcon({ icon, color }: { icon: string; color: string }) {
       <div
         className={cx(
           "flex",
-          "flex-row",
           "items-center",
           "justify-center",
 
@@ -50,7 +102,16 @@ function RowIcon({ icon, color }: { icon: string; color: string }) {
 
 function RowDetails({ title, subtitle }: { title: string; subtitle: string }) {
   return (
-    <div className={cx("flex-grow", "flex", "flex-col", "p-[5px]")}>
+    <div
+      className={cx(
+        "flex-grow",
+
+        "flex",
+        "flex-col",
+
+        "p-[5px]",
+      )}
+    >
       <div>{title}</div>
 
       <div className={cx("text-[#606060]", "text-[13px]", "italic")}>

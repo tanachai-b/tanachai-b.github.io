@@ -12,17 +12,14 @@ export default function App() {
           />
         }
       >
-        <DataHeader title="GitHub Page" />
+        <DataHeader title="Vite.js - React - Typescript" />
 
         <DataRow
           icon="home"
-          color="#808080"
-          title="tanachai-b.github.io"
+          color="#c0c0c0"
+          title="GitHub Page"
           path="tanachai-b.github.io"
         />
-
-        <DataHeader title="Vite.js - React - Typescript" />
-
         <DataRow
           icon="sticky_note_2"
           color="#ffd000"

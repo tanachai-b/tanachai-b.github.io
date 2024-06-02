@@ -64,8 +64,8 @@ export function CardHeader({
         "items-center",
       )}
     >
-      <div className={cx("text-center", "text-[30px]")}>{title}</div>
-      {subtitle}
+      <div className={cx("text-[30px]")}>{title}</div>
+      <div className={cx("text-[13px]", "text-[#606060]")}>{subtitle}</div>
     </div>
   );
 }

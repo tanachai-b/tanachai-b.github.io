@@ -151,22 +151,22 @@ function Link({ label, href }: { label: string; href: string }) {
         "w-[80px]",
 
         "flex",
-        "flex-row",
         "items-center",
         "justify-center",
-
-        "gap-[2px]",
 
         "text-[13px]",
         "text-[#606060]",
         "hover:font-bold",
       )}
     >
-      <a href={href} target="_blank">
+      <a
+        href={href}
+        target="_blank"
+        className={cx("flex", "flex-row", "items-center", "gap-[2px]")}
+      >
         {label}
+        <IconSpan icon="open_in_new" />
       </a>
-
-      <IconSpan icon="open_in_new" />
     </div>
   );
 }

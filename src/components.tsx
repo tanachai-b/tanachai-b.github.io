@@ -28,15 +28,15 @@ export function Card({ children }: { children: ReactNode }) {
     <div
       className={cx(
         "w-[500px]",
+        "p-[30px]",
 
         "bg-[#181818]",
-
-        "border-[1px]",
         "border-[#303030]",
-
+        "border-[1px]",
         "rounded-[10px]",
 
-        "p-[30px]",
+        "flex",
+        "flex-col",
       )}
     >
       {children}
@@ -50,9 +50,8 @@ export function CardHeader({ title }: { title: string }) {
       className={cx(
         "pb-[20px]",
 
-        "text-[30px]",
         "text-center",
-
+        "text-[30px]",
         "text-[#606060]",
       )}
     >
@@ -80,31 +79,27 @@ export function DataRow({
   icon,
   color,
   title,
-  subtitle,
-  gitHub,
-  website,
+  path,
 }: {
   icon: string;
   color: string;
   title: string;
-  subtitle: string;
-  gitHub: string;
-  website: string;
+  path: string;
 }) {
   return (
     <div className={cx("flex", "flex-row")}>
-      <Icon icon={icon} color={color} />
+      <RowIcon icon={icon} color={color} />
 
-      <TitleSubtitle title={title} subtitle={subtitle} />
+      <RowDetails title={title} subtitle={`/${path}`} />
 
-      <Link label="GitHub" href={gitHub} />
+      <RowLink label="GitHub" href={`https://github.com/tanachai-b/${path}`} />
 
-      <Link label="Website" href={website} />
+      <RowLink label="Website" href={`https://tanachai-b.github.io/${path}`} />
     </div>
   );
 }
 
-function Icon({ icon, color }: { icon: string; color: string }) {
+function RowIcon({ icon, color }: { icon: string; color: string }) {
   return (
     <>
       <div
@@ -120,31 +115,25 @@ function Icon({ icon, color }: { icon: string; color: string }) {
         )}
         style={{ color }}
       >
-        <IconSpan icon={icon} />
+        <Icon icon={icon} />
       </div>
     </>
   );
 }
 
-function TitleSubtitle({
-  title,
-  subtitle,
-}: {
-  title: string;
-  subtitle: string;
-}) {
+function RowDetails({ title, subtitle }: { title: string; subtitle: string }) {
   return (
     <div className={cx("flex-grow", "flex", "flex-col", "p-[5px]")}>
       <div>{title}</div>
 
       <div className={cx("text-[#606060]", "italic", "text-[13px]")}>
-        /{subtitle}
+        {subtitle}
       </div>
     </div>
   );
 }
 
-function Link({ label, href }: { label: string; href: string }) {
+function RowLink({ label, href }: { label: string; href: string }) {
   return (
     <div
       className={cx(
@@ -165,13 +154,13 @@ function Link({ label, href }: { label: string; href: string }) {
         className={cx("flex", "flex-row", "items-center", "gap-[2px]")}
       >
         {label}
-        <IconSpan icon="open_in_new" />
+        <Icon icon="open_in_new" />
       </a>
     </div>
   );
 }
 
-function IconSpan({ icon }: { icon: string }) {
+function Icon({ icon }: { icon: string }) {
   return (
     <>
       <link

@@ -1,12 +1,9 @@
 import cx from "classnames";
-import { HTMLAttributes, Ref } from "react";
+import { HTMLAttributes } from "react";
 
 export function FlexCol({
-  ref,
   className,
   ...rest
-}: { ref?: Ref<HTMLDivElement> } & HTMLAttributes<HTMLDivElement>) {
-  return (
-    <div ref={ref} className={cx("flex", "flex-col", className)} {...rest} />
-  );
+}: HTMLAttributes<HTMLDivElement>) {
+  return <div className={cx("flex", "flex-col", className)} {...rest} />;
 }

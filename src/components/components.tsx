@@ -3,12 +3,11 @@ import { ReactNode } from "react";
 
 import { FlexCen } from "./commons";
 
-export function Container({ children }: { children: ReactNode }) {
+export function Container({ children }: { children?: ReactNode }) {
   return (
     <FlexCen
       className={cx(
         "h-full",
-        "p-[10px]",
 
         "bg-[#101010]",
 

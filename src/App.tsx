@@ -8,63 +8,34 @@ export default function App() {
 
         <DataHeader label="Vite.js - React - Typescript" />
 
-        <DataRow
-          label="Sticky Notes"
-          website="https://tanachai-b.github.io/sticky-notes"
-          gitHub="https://github.com/tanachai-b/sticky-notes"
-        />
+        <GitRow label="Sticky Notes" gitPath="sticky-notes" />
 
         <DataHeader label="Next.js - React - Typescript" />
 
-        <DataRow
-          label="Personal Finance"
-          website="https://tanachai-b.github.io/personal-finance"
-          gitHub="https://github.com/tanachai-b/personal-finance"
-        />
-        <DataRow
-          label="Watch Face"
-          website="https://tanachai-b.github.io/watch-face"
-          gitHub="https://github.com/tanachai-b/watch-face"
-        />
-        <DataRow
-          label="Color Palette"
-          website="https://tanachai-b.github.io/color-palette"
-          gitHub="https://github.com/tanachai-b/color-palette"
-        />
-        <DataRow
-          label="Thai Keyboard"
-          website="https://tanachai-b.github.io/thai-keyboard"
-          gitHub="https://github.com/tanachai-b/thai-keyboard"
-        />
-        <DataRow
-          label="Next.js"
-          website="https://tanachai-b.github.io/calendar"
-          gitHub="https://github.com/tanachai-b/calendar"
-        />
+        <GitRow label="Personal Finance" gitPath="personal-finance" />
+        <GitRow label="Watch Face" gitPath="watch-face" />
+        <GitRow label="Color Palette" gitPath="color-palette" />
+        <GitRow label="Thai Keyboard" gitPath="thai-keyboard" />
+        <GitRow label="Next.js" gitPath="calendar" />
 
         <DataHeader label="Plain Javscript" />
 
-        <DataRow
-          label="Equations 3D"
-          website="https://tanachai-b.github.io/equations-3d"
-          gitHub="https://github.com/tanachai-b/equations-3d"
-        />
-        <DataRow
-          label="Starship Command"
-          website="https://tanachai-b.github.io/starship-command"
-          gitHub="https://github.com/tanachai-b/starship-command"
-        />
-        <DataRow
-          label="Orbit Lines"
-          website="https://tanachai-b.github.io/orbit-lines"
-          gitHub="https://github.com/tanachai-b/orbit-lines"
-        />
-        <DataRow
-          label="Car Simulator"
-          website="https://tanachai-b.github.io/car-simulator"
-          gitHub="https://github.com/tanachai-b/car-simulator"
-        />
+        <GitRow label="Equations 3D" gitPath="equations-3d" />
+        <GitRow label="Starship Command" gitPath="starship-command" />
+        <GitRow label="Orbit Lines" gitPath="orbit-lines" />
+        <GitRow label="Car Simulator" gitPath="car-simulator" />
       </Card>
     </Container>
+  );
+}
+
+function GitRow({ label, gitPath }: { label: string; gitPath: string }) {
+  return (
+    <DataRow
+      label={label}
+      subtitle={gitPath}
+      website={`https://tanachai-b.github.io/${gitPath}`}
+      gitHub={`https://github.com/tanachai-b/${gitPath}`}
+    />
   );
 }

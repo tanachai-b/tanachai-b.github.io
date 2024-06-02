@@ -78,17 +78,24 @@ export function DataHeader({ label }: { label: string }) {
 }
 
 export function DataRow({
-  label = "yada yada",
-  website = "https://www.google.com",
-  gitHub = "https://www.google.com",
+  label,
+  subtitle,
+  website,
+  gitHub,
 }: {
-  label?: string;
-  website?: string;
-  gitHub?: string;
+  label: string;
+  subtitle: string;
+  website: string;
+  gitHub: string;
 }) {
   return (
     <div className={classnames("flex", "flex-row")}>
-      <div className={classnames("flex-grow", "p-[10px]")}>{label}</div>
+      <div className={classnames("flex-grow", "flex", "flex-col", "p-[5px]")}>
+        <div>{label}</div>
+        <div className={classnames("text-[#606060]", "italic", "text-[13px]")}>
+          {subtitle}
+        </div>
+      </div>
 
       <Link label="Website" href={website} />
 
@@ -107,7 +114,7 @@ function Link({ label, href }: { label: string; href: string }) {
         "items-center",
         "justify-center",
 
-        "text-[12px]",
+        "text-[13px]",
         "text-[#808080]",
       )}
     >

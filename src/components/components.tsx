@@ -6,16 +6,17 @@ export function Container({ children }: { children: ReactNode }) {
     <div
       className={cx(
         "h-full",
+        "p-[10px]",
 
         "bg-[#101010]",
+
         "text-[#c0c0c0]",
+        "text-[15px]",
 
         "flex",
         "flex-col",
         "items-center",
         "justify-center",
-
-        "text-[15px]",
       )}
     >
       {children}
@@ -27,20 +28,18 @@ export function Card({ children }: { children: ReactNode }) {
   return (
     <div
       className={cx(
-        "m-[10px]",
         "w-[500px]",
+        "max-w-full",
 
         "bg-[#181818]",
         "border-[#303030]",
         "border-[1px]",
         "rounded-[10px]",
 
-        "p-[30px]",
-
         "flex",
         "flex-col",
 
-        "overflow-auto",
+        "overflow-hidden",
       )}
     >
       {children}
@@ -56,9 +55,32 @@ export function CardHeader({
   subtitle: ReactNode;
 }) {
   return (
-    <div className={cx("pb-[20px]", "flex", "flex-col", "items-center")}>
+    <div
+      className={cx(
+        "p-[30px]",
+
+        "flex",
+        "flex-col",
+        "items-center",
+      )}
+    >
       <div className={cx("text-center", "text-[30px]")}>{title}</div>
       {subtitle}
+    </div>
+  );
+}
+
+export function CardBody({ children }: { children: ReactNode }) {
+  return (
+    <div
+      className={cx(
+        "p-[30px]",
+        "pt-[0px]",
+
+        "overflow-auto",
+      )}
+    >
+      {children}
     </div>
   );
 }

@@ -1,8 +1,6 @@
 import cx from "classnames";
 import { ReactNode } from "react";
 
-import { Icon } from "./commons";
-
 export function Container({ children }: { children: ReactNode }) {
   return (
     <div
@@ -58,35 +56,6 @@ export function CardHeader({
       <div className={cx("text-center", "text-[30px]")}>{title}</div>
       {subtitle}
     </div>
-  );
-}
-
-export function CardHeaderLink({
-  label,
-  href,
-}: {
-  label: string;
-  href: string;
-}) {
-  return (
-    <a
-      href={href}
-      target="_blank"
-      className={cx(
-        "flex",
-        "flex-row",
-        "items-center",
-
-        "gap-[2px]",
-
-        "text-[13px]",
-        "text-[#606060]",
-        "hover:font-bold",
-      )}
-    >
-      {label}
-      <Icon icon="open_in_new" />
-    </a>
   );
 }
 

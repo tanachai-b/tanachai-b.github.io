@@ -1,10 +1,10 @@
 import {
   Card,
   CardHeader,
-  CardHeaderLink,
   Container,
   DataHeader,
   DataRow,
+  Link,
 } from "./components";
 
 export default function App() {
@@ -14,7 +14,7 @@ export default function App() {
         <CardHeader
           title="tanachai-b"
           subtitle={
-            <CardHeaderLink
+            <Link
               label="github.com/tanachai-b"
               href="https://github.com/tanachai-b"
             />

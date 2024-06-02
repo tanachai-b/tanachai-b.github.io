@@ -1,6 +1,8 @@
 import cx from "classnames";
-import { ReactNode } from "react";
+import { ReactNode, useMemo } from "react";
+
 import { FlexCol } from "./commons";
+import { useDivRect } from "./hooks";
 
 export function Card({
   title,
@@ -9,25 +11,48 @@ export function Card({
 }: {
   title: string;
   subtitle: ReactNode;
-  children: ReactNode;
+  children?: ReactNode;
 }) {
   return (
-    <FlexCol
+    <CardBorder>
+      <CardHeader title={title} subtitle={subtitle} />
+      <CardBody>{children}</CardBody>
+    </CardBorder>
+  );
+}
+
+function CardBorder({ children }: { children?: ReactNode }) {
+  const { ref, width } = useDivRect();
+  const isLargeScreen = useMemo<boolean>(() => width >= 499, [width]);
+
+  return (
+    <div
+      ref={ref}
       className={cx(
         "w-[500px]",
         "max-w-full",
 
-        "bg-[#181818]",
-        "border-[#303030]",
-        "border-[1px]",
-        "rounded-[10px]",
-
         "overflow-hidden",
+
+        { "p-[10px]": isLargeScreen },
       )}
     >
-      <CardHeader title={title} subtitle={subtitle} />
-      <CardBody>{children}</CardBody>
-    </FlexCol>
+      <FlexCol
+        className={cx(
+          "max-h-full",
+
+          "bg-[#181818]",
+
+          {
+            "border-[#303030]": isLargeScreen,
+            "border-[1px]": isLargeScreen,
+            "rounded-[10px]": isLargeScreen,
+          },
+        )}
+      >
+        {children}
+      </FlexCol>
+    </div>
   );
 }
 
@@ -46,7 +71,7 @@ function CardHeader({
   );
 }
 
-function CardBody({ children }: { children: ReactNode }) {
+function CardBody({ children }: { children?: ReactNode }) {
   return (
     <div
       className={cx(

@@ -1,7 +1,8 @@
 import cx from "classnames";
-import { useEffect, useRef, useState } from "react";
+import { useMemo } from "react";
 
 import { FlexCen, FlexCol, FlexRow, Icon, Link } from "./commons";
+import { useDivRect } from "./hooks";
 
 export function DataRow({
   icon,
@@ -14,23 +15,8 @@ export function DataRow({
   title: string;
   path: string;
 }) {
-  const ref = useRef<HTMLDivElement>(null);
-
-  const [isVertical, setIsVertical] = useState<boolean>(false);
-
-  useEffect(() => {
-    if (!ref.current) return;
-
-    const resizeObserver = new ResizeObserver(() => {
-      if (!ref.current) return;
-      const { width } = ref.current.getBoundingClientRect() ?? {};
-
-      setIsVertical(width < 350);
-    });
-    resizeObserver.observe(ref.current);
-
-    return () => resizeObserver.disconnect();
-  }, []);
+  const { ref, width } = useDivRect();
+  const isVertical = useMemo<boolean>(() => width < 350, [width]);
 
   return (
     <div

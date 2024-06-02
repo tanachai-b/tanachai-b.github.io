@@ -24,7 +24,15 @@ export function Container({ children }: { children: ReactNode }) {
   );
 }
 
-export function Card({ children }: { children: ReactNode }) {
+export function Card({
+  title,
+  subtitle,
+  children,
+}: {
+  title: string;
+  subtitle: ReactNode;
+  children: ReactNode;
+}) {
   return (
     <div
       className={cx(
@@ -42,12 +50,13 @@ export function Card({ children }: { children: ReactNode }) {
         "overflow-hidden",
       )}
     >
-      {children}
+      <CardHeader title={title} subtitle={subtitle} />
+      <CardBody>{children}</CardBody>
     </div>
   );
 }
 
-export function CardHeader({
+function CardHeader({
   title,
   subtitle,
 }: {
@@ -70,7 +79,7 @@ export function CardHeader({
   );
 }
 
-export function CardBody({ children }: { children: ReactNode }) {
+function CardBody({ children }: { children: ReactNode }) {
   return (
     <div
       className={cx(

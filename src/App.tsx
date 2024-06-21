@@ -26,6 +26,12 @@ export default function App() {
           title="Sticky Notes"
           path="sticky-notes"
         />
+        <DataRow
+          icon="palette"
+          color="#00c0ff"
+          title="Color Swatches"
+          path="color-swatches"
+        />
 
         <DataHeader title="Next.js - React - Typescript" />
 

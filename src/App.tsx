@@ -10,9 +10,9 @@ export default function App() {
       >
         <DataHeader title="Vite.js - React - Typescript" />
 
-        <DataRow icon="home" color="#c0c0c0" title="GitHub Page" path="tanachai-b.github.io" />
+        <DataRow icon="palette" color="#ff6000" title="Color Swatches" path="color-swatches" />
         <DataRow icon="sticky_note_2" color="#ffd000" title="Sticky Notes" path="sticky-notes" />
-        <DataRow icon="palette" color="#00c0ff" title="Color Swatches" path="color-swatches" />
+        <DataRow icon="home" color="#c0c0c0" title="GitHub Page" path="tanachai-b.github.io" />
 
         <DataHeader title="Next.js - React - Typescript" />
 
@@ -23,7 +23,6 @@ export default function App() {
           path="personal-finance"
         />
         <DataRow icon="watch" color="#80ff00" title="Watch Face" path="watch-face" />
-        <DataRow icon="palette" color="#ff6000" title="Color Palette" path="color-palette" />
         <DataRow icon="keyboard" color="#6000ff" title="Thai Keyboard" path="thai-keyboard" />
         <DataRow icon="calendar_month" color="#ff40e0" title="Next.js" path="calendar" />
 

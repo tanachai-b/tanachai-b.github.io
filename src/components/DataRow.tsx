@@ -36,15 +36,9 @@ export function DataRow({
       </FlexRow>
 
       <FlexRow className={cx({ "pl-[30px]": isVertical })}>
-        <RowLink
-          label="GitHub"
-          href={`https://github.com/tanachai-b/${path}`}
-        />
+        <RowLink label="GitHub" href={`https://github.com/tanachai-b/${path}`} />
 
-        <RowLink
-          label="Website"
-          href={`https://tanachai-b.github.io/${path}`}
-        />
+        <RowLink label="Website" href={`https://tanachai-b.github.io/${path}`} />
       </FlexRow>
     </div>
   );
@@ -63,9 +57,7 @@ function RowDetails({ title, subtitle }: { title: string; subtitle: string }) {
     <FlexCol className={cx("flex-grow", "p-[5px]")}>
       <div>{title}</div>
 
-      <div className={cx("text-[#606060]", "text-[13px]", "italic")}>
-        {subtitle}
-      </div>
+      <div className={cx("text-[#606060]", "text-[13px]", "italic")}>{subtitle}</div>
     </FlexCol>
   );
 }

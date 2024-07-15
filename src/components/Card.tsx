@@ -89,10 +89,7 @@ function CardHeader({
   const fontSize = lerp(20, 30, factor);
 
   return (
-    <FlexCol
-      className={cx("sticky", "top-[0px]")}
-      style={{ minHeight: `${maxHeight}px` }}
-    >
+    <FlexCol className={cx("sticky", "top-[0px]")} style={{ minHeight: `${maxHeight}px` }}>
       <FlexCen className={cx("bg-[#181818]")} style={{ height: `${height}px` }}>
         <FlexCol className={cx("items-center")}>
           <div style={{ fontSize: `${fontSize}px` }}>{title}</div>

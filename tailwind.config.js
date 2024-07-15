@@ -3,7 +3,12 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: { fontFamily: { sans: ["Inter", "Noto Sans Thai", "sans-serif"] } },
+    extend: {
+      fontFamily: {
+        sans: ["Noto Sans", "sans-serif"],
+        mono: ["Noto Sans Mono", "monospace"],
+      },
+    },
   },
   plugins: [],
 };

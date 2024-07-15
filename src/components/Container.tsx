@@ -1,6 +1,6 @@
 import cx from "classnames";
 import { ReactNode } from "react";
-import { FlexCen } from "./commons";
+import { FlexCen } from "src/common-components";
 
 export function Container({ children }: { children?: ReactNode }) {
   return (

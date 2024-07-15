@@ -1,7 +1,7 @@
 import cx from "classnames";
 import { useMemo } from "react";
-import { FlexCen, FlexCol, FlexRow, Icon, Link } from "./commons";
-import { useDivRect } from "./hooks";
+import { FlexCen, FlexCol, FlexRow, Icon, Link } from "src/common-components";
+import { useDivRect } from "./useDivRect";
 
 export function DataRow({
   icon,

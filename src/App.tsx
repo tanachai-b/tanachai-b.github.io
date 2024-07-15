@@ -1,4 +1,5 @@
-import { Card, Container, DataHeader, DataRow, Link } from "./components";
+import { Link } from "./common-components";
+import { Card, Container, DataHeader, DataRow } from "./components";
 
 export default function App() {
   return (

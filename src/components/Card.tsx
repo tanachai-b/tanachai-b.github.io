@@ -114,7 +114,12 @@ function CardHeader({
         style={{ height: `${height}px` }}
       >
         <div className={cx("flex", "flex-col", "items-center")}>
-          <div style={{ fontSize: `${fontSize}px` }}>{title}</div>
+          <div
+            className={cx("text-[#c0c0c0]", "text-[15px]")}
+            style={{ fontSize: `${fontSize}px` }}
+          >
+            {title}
+          </div>
 
           <div className={cx("text-[13px]", "text-[#606060]")}>{subtitle}</div>
         </div>

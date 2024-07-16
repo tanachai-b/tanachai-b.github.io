@@ -9,9 +9,6 @@ export function Container({ children }: { children?: ReactNode }) {
 
         "bg-[#101010]",
 
-        "text-[#c0c0c0]",
-        "text-[15px]",
-
         "grid",
         "place-items-center",
       )}
@@ -28,6 +25,8 @@ export function DataHeader({ title }: { title: string }) {
         "pt-[30px]",
         "pb-[20px]",
 
+        "text-[#c0c0c0]",
+        "text-[15px]",
         "font-bold",
       )}
     >

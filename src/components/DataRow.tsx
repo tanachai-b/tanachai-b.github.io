@@ -71,7 +71,7 @@ function RowDetails({ title, subtitle }: { title: string; subtitle: string }) {
         "p-[5px]",
       )}
     >
-      <div>{title}</div>
+      <div className={cx("text-[#c0c0c0]", "text-[15px]")}>{title}</div>
 
       <div className={cx("text-[#606060]", "text-[13px]", "italic")}>{subtitle}</div>
     </div>

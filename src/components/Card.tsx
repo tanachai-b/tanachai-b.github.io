@@ -1,6 +1,5 @@
 import cx from "classnames";
 import { ReactNode, UIEvent, UIEventHandler, useMemo, useState } from "react";
-import { FlexCen, FlexCol } from "src/common-components";
 import { useDivRect } from "./useDivRect";
 
 export function Card({
@@ -40,18 +39,21 @@ function CardBorder({
     <div
       ref={ref}
       className={cx(
-        "w-[500px]",
-        "max-w-full",
+        "w-full",
+        "max-w-[500px]",
+        "max-h-full",
+
+        "grid",
+        "grid-rows-1",
+        "grid-cols-1",
 
         "overflow-hidden",
 
         { "p-[10px]": isLargeScreen },
       )}
     >
-      <FlexCol
+      <div
         className={cx(
-          "max-h-full",
-
           "bg-[#181818]",
 
           {
@@ -60,12 +62,15 @@ function CardBorder({
             "rounded-[10px]": isLargeScreen,
           },
 
+          "flex",
+          "flex-col",
+
           "overflow-auto",
         )}
         onScroll={onScroll}
       >
         {children}
-      </FlexCol>
+      </div>
     </div>
   );
 }
@@ -88,14 +93,32 @@ function CardHeader({
   const fontSize = lerp(20, 30, factor);
 
   return (
-    <FlexCol className={cx("sticky", "top-[0px]")} style={{ minHeight: `${maxHeight}px` }}>
-      <FlexCen className={cx("bg-[#181818]")} style={{ height: `${height}px` }}>
-        <FlexCol className={cx("items-center")}>
+    <div
+      className={cx(
+        "sticky",
+        "top-[0px]",
+
+        "flex",
+        "flex-col",
+      )}
+      style={{ minHeight: `${maxHeight}px` }}
+    >
+      <div
+        className={cx(
+          "bg-[#181818]",
+
+          "grid",
+          "place-items-center",
+        )}
+        style={{ height: `${height}px` }}
+      >
+        <div className={cx("flex", "flex-col", "items-center")}>
           <div style={{ fontSize: `${fontSize}px` }}>{title}</div>
+
           <div className={cx("text-[13px]", "text-[#606060]")}>{subtitle}</div>
-        </FlexCol>
-      </FlexCen>
-    </FlexCol>
+        </div>
+      </div>
+    </div>
   );
 }
 

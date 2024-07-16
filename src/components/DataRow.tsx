@@ -1,6 +1,6 @@
 import cx from "classnames";
 import { useMemo } from "react";
-import { FlexCen, FlexCol, FlexRow, Icon, Link } from "src/common-components";
+import { Icon, Link } from "src/common-components";
 import { useDivRect } from "./useDivRect";
 
 export function DataRow({
@@ -28,50 +28,70 @@ export function DataRow({
         "mb-[10px]",
       )}
     >
-      <FlexRow className={cx("flex-grow")}>
+      <div className={cx("flex-grow", "flex", "flex-row")}>
         <RowIcon icon={icon} color={color} />
 
         <RowDetails title={title} subtitle={`/${path}`} />
-      </FlexRow>
+      </div>
 
-      <FlexRow className={cx({ "pl-[30px]": isVertical })}>
+      <div className={cx("flex", "flex-row", { "pl-[30px]": isVertical })}>
         <RowLink label="GitHub" href={`https://github.com/tanachai-b/${path}`} />
 
         <RowLink label="Website" href={`https://tanachai-b.github.io/${path}`} />
-      </FlexRow>
+      </div>
     </div>
   );
 }
 
 function RowIcon({ icon, color }: { icon: string; color: string }) {
   return (
-    <FlexCen className={cx("p-[5px]", "text-[20px]")} style={{ color }}>
+    <div
+      className={cx(
+        "grid",
+        "place-content-center",
+        "p-[5px]",
+
+        "text-[20px]",
+      )}
+      style={{ color }}
+    >
       <Icon icon={icon} />
-    </FlexCen>
+    </div>
   );
 }
 
 function RowDetails({ title, subtitle }: { title: string; subtitle: string }) {
   return (
-    <FlexCol className={cx("flex-grow", "p-[5px]")}>
+    <div
+      className={cx(
+        "flex-grow",
+
+        "flex",
+        "flex-col",
+        "p-[5px]",
+      )}
+    >
       <div>{title}</div>
 
       <div className={cx("text-[#606060]", "text-[13px]", "italic")}>{subtitle}</div>
-    </FlexCol>
+    </div>
   );
 }
 
 function RowLink({ label, href }: { label: string; href: string }) {
   return (
-    <FlexCen
+    <div
       className={cx(
         "w-[80px]",
+
+        "grid",
+        "place-items-center",
 
         "text-[#606060]",
         "text-[13px]",
       )}
     >
       <Link label={label} href={href} />
-    </FlexCen>
+    </div>
   );
 }

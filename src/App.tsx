@@ -1,7 +1,6 @@
-import cx from "classnames";
 import { useState } from "react";
 import { Link } from "./common-components";
-import { Card, Container, DataHeader, DataRow } from "./components";
+import { Card, Container, Copyright, DataHeader, DataRow } from "./components";
 
 export default function App() {
   const [scroll, setScroll] = useState<number>(0);
@@ -62,6 +61,8 @@ export default function App() {
           />
         </>
       </Card>
+
+      <Copyright />
     </Container>
   );
 }

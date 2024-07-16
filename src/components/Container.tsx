@@ -11,6 +11,8 @@ export function Container({ children }: { children: ReactNode }) {
 
         "grid",
         "place-items-center",
+
+        "overflow-hidden",
       )}
     >
       {children}

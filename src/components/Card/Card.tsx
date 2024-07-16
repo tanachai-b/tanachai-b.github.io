@@ -1,6 +1,6 @@
 import cx from "classnames";
-import { ReactNode, UIEvent, UIEventHandler, useMemo, useState } from "react";
-import { useDivRect } from "src/common-hook";
+import { ReactNode, UIEvent, UIEventHandler, useState } from "react";
+import { ObserveResize } from "src/common-components";
 import { CardHeader } from "./CardHeader";
 
 export function Card({
@@ -28,41 +28,50 @@ export function Card({
 }
 
 function Container({ onScroll, children }: { onScroll: UIEventHandler; children: ReactNode }) {
-  const { ref, width } = useDivRect();
-  const isLargeScreen = useMemo<boolean>(() => width >= 499, [width]);
+  const [width, setWidth] = useState(0);
+  const isLargeScreen = width >= 499;
 
   return (
     <div
-      ref={ref}
       className={cx(
         "w-full",
         "max-w-[500px]",
+        "h-fit",
         "max-h-full",
 
         "grid",
         "grid-rows-1",
-        "grid-cols-1",
 
         "overflow-hidden",
-
-        { "p-[10px]": isLargeScreen },
       )}
     >
-      <div
-        className={cx(
-          "bg-[#101010]",
+      <ObserveResize onResize={({ width }) => setWidth(width)}>
+        <div
+          className={cx(
+            "size-full",
 
-          { "rounded-[10px]": isLargeScreen },
+            { "p-[10px]": isLargeScreen },
+          )}
+        >
+          <div
+            className={cx(
+              "size-full",
 
-          "flex",
-          "flex-col",
+              "bg-[#101010]",
 
-          "overflow-auto",
-        )}
-        onScroll={onScroll}
-      >
-        {children}
-      </div>
+              { "rounded-[10px]": isLargeScreen },
+
+              "flex",
+              "flex-col",
+
+              "overflow-auto",
+            )}
+            onScroll={onScroll}
+          >
+            {children}
+          </div>
+        </div>
+      </ObserveResize>
     </div>
   );
 }

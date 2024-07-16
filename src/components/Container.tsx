@@ -7,7 +7,7 @@ export function Container({ children }: { children?: ReactNode }) {
       className={cx(
         "h-full",
 
-        "bg-[#101010]",
+        "bg-[#000000]",
 
         "grid",
         "place-items-center",
@@ -25,8 +25,8 @@ export function DataHeader({ title }: { title: string }) {
         "pt-[30px]",
         "pb-[20px]",
 
-        "text-[#c0c0c0]",
-        "text-[15px]",
+        "text-[#606060]",
+        "text-[13px]",
         "font-bold",
       )}
     >

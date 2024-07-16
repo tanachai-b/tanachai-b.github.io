@@ -55,13 +55,9 @@ function CardBorder({
     >
       <div
         className={cx(
-          "bg-[#181818]",
+          "bg-[#101010]",
 
-          {
-            "border-[#303030]": isLargeScreen,
-            "border-[1px]": isLargeScreen,
-            "rounded-[10px]": isLargeScreen,
-          },
+          { "rounded-[10px]": isLargeScreen },
 
           "flex",
           "flex-col",
@@ -106,7 +102,7 @@ function CardHeader({
     >
       <div
         className={cx(
-          "bg-[#181818]",
+          "bg-[#101010]",
 
           "grid",
           "place-items-center",
@@ -114,14 +110,11 @@ function CardHeader({
         style={{ height: `${height}px` }}
       >
         <div className={cx("flex", "flex-col", "items-center")}>
-          <div
-            className={cx("text-[#c0c0c0]", "text-[15px]")}
-            style={{ fontSize: `${fontSize}px` }}
-          >
+          <div className={cx("text-[#a0a0a0]")} style={{ fontSize: `${fontSize}px` }}>
             {title}
           </div>
 
-          <div className={cx("text-[13px]", "text-[#606060]")}>{subtitle}</div>
+          <div className={cx("text-[#606060]", "text-[13px]")}>{subtitle}</div>
         </div>
       </div>
     </div>

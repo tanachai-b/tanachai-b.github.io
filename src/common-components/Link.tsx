@@ -13,7 +13,8 @@ export function Link({ label, href }: { label: string; href: string }) {
         "items-center",
         "gap-[2px]",
 
-        "hover:font-bold",
+        "hover:text-[#a0a0a0]",
+        "transition-all",
       )}
     >
       {label}

@@ -1,12 +1,17 @@
+import cx from "classnames";
+import { useState } from "react";
 import { Link } from "./common-components";
 import { Card, Container, DataHeader, DataRow } from "./components";
 
 export default function App() {
+  const [scroll, setScroll] = useState<number>(0);
+
   return (
-    <Container>
+    <Container onScroll={setScroll}>
       <Card
         title="tanachai-b"
         subtitle={<Link label="github.com/tanachai-b" href="https://github.com/tanachai-b" />}
+        scroll={scroll}
       >
         <>
           <DataHeader title="Vite.js - React - Typescript" />

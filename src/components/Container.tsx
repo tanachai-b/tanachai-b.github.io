@@ -1,19 +1,26 @@
 import cx from "classnames";
 import { ReactNode } from "react";
 
-export function Container({ children }: { children: ReactNode }) {
+export function Container({
+  onScroll,
+  children,
+}: {
+  onScroll: (scroll: number) => void;
+  children: ReactNode;
+}) {
   return (
     <div
       className={cx(
-        "h-full",
+        "size-full",
+        "overflow-auto",
 
         "bg-[#000000]",
 
-        "grid",
-        "place-items-center",
-
-        "overflow-hidden",
+        "flex",
+        "flex-col",
+        "items-center",
       )}
+      onScroll={(e) => onScroll((e.target as HTMLDivElement).scrollTop)}
     >
       {children}
     </div>

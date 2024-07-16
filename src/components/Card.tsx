@@ -20,6 +20,7 @@ export function Card({
   return (
     <CardBorder onScroll={onScroll}>
       <CardHeader title={title} subtitle={subtitle} scroll={scroll} />
+
       <CardBody>{children}</CardBody>
     </CardBorder>
   );

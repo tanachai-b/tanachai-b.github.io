@@ -17,6 +17,7 @@ export function Link({ label, href }: { label: string; href: string }) {
       )}
     >
       {label}
+
       <Icon icon="open_in_new" />
     </a>
   );

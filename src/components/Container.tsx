@@ -18,7 +18,6 @@ export function Container({
 
         "flex",
         "flex-col",
-        "items-center",
       )}
       onScroll={(e) => onScroll((e.target as HTMLDivElement).scrollTop)}
     >

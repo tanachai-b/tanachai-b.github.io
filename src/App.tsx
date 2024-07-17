@@ -1,3 +1,4 @@
+import cx from "classnames";
 import { useState } from "react";
 import { Link } from "./common-components";
 import { Card, Container, Copyright, DataHeader, DataRow } from "./components";
@@ -12,7 +13,7 @@ export default function App() {
         subtitle={<Link label="github.com/tanachai-b" href="https://github.com/tanachai-b" />}
         scroll={scroll}
       >
-        <>
+        <div className={cx("break-inside-avoid")}>
           <DataHeader title="Vite.js - React - Typescript" />
 
           <DataRow icon="palette" color="#ff6000" title="Color Swatches" path="color-swatches" />
@@ -20,9 +21,9 @@ export default function App() {
           <DataRow icon="sticky_note_2" color="#ffd000" title="Sticky Notes" path="sticky-notes" />
 
           <DataRow icon="home" color="#c0c0c0" title="GitHub Page" path="tanachai-b.github.io" />
-        </>
+        </div>
 
-        <>
+        <div className={cx("break-inside-avoid")}>
           <DataHeader title="Next.js - React - Typescript" />
 
           <DataRow
@@ -37,9 +38,9 @@ export default function App() {
           <DataRow icon="keyboard" color="#6000ff" title="Thai Keyboard" path="thai-keyboard" />
 
           <DataRow icon="calendar_month" color="#ff40e0" title="Next.js" path="calendar" />
-        </>
+        </div>
 
-        <>
+        <div className={cx("break-inside-avoid")}>
           <DataHeader title="Plain Javscript" />
 
           <DataRow icon="deployed_code" color="#00c0ff" title="Equations 3D" path="equations-3d" />
@@ -59,7 +60,7 @@ export default function App() {
             title="Car Simulator"
             path="car-simulator"
           />
-        </>
+        </div>
       </Card>
 
       <Copyright />

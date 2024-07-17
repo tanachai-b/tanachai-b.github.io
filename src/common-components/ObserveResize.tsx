@@ -1,3 +1,4 @@
+import cx from "classnames";
 import { ReactNode, useEffect, useRef } from "react";
 
 export function ObserveResize({
@@ -21,5 +22,9 @@ export function ObserveResize({
     return () => resizeObserver.disconnect();
   }, [onResize]);
 
-  return <div ref={ref}>{children}</div>;
+  return (
+    <div ref={ref} className={cx("size-full")}>
+      {children}
+    </div>
+  );
 }

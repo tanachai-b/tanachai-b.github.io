@@ -14,17 +14,16 @@ export function Card({
   scroll: number;
   children: ReactNode;
 }) {
+  const [width, setWidth] = useState(0);
+  const columns = Math.min(Math.floor((width - 200) / 250), 3);
+
   return (
-    <Container>
+    <Container onResize={setWidth}>
       <CardHeader title={title} subtitle={subtitle} scroll={scroll} />
 
       <div
-        className={cx(
-          "p-[50px]",
-          "pt-[0px]",
-
-          "columns-[3_250px]",
-        )}
+        className={cx("p-[50px]", "pt-[0px]")}
+        style={{ columnCount: columns, columnWidth: "250px" }}
       >
         {children}
       </div>
@@ -32,13 +31,24 @@ export function Card({
   );
 }
 
-function Container({ children }: { children: ReactNode }) {
+function Container({
+  onResize,
+  children,
+}: {
+  onResize: (width: number) => void;
+  children: ReactNode;
+}) {
   const [width, setWidth] = useState(0);
   const isLargeScreen = width >= 400;
 
   return (
     <div className={cx("grow")}>
-      <ObserveResize onResize={({ width }) => setWidth(width)}>
+      <ObserveResize
+        onResize={({ width }) => {
+          setWidth(width);
+          onResize(width);
+        }}
+      >
         <div
           className={cx(
             "size-full",

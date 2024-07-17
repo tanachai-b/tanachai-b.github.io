@@ -4,8 +4,7 @@ export function DataHeader({ title }: { title: string }) {
   return (
     <div
       className={cx(
-        "pt-[30px]",
-        "pb-[20px]",
+        "py-[20px]",
 
         "text-[#606060]",
         "text-[13px]",

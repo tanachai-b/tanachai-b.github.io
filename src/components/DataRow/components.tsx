@@ -3,7 +3,15 @@ import { Icon, Link } from "src/common-components";
 
 export function RowIcon({ icon, color }: { icon: string; color: string }) {
   return (
-    <div className={cx("grid", "text-[20px]")} style={{ color }}>
+    <div
+      className={cx(
+        "place-self-center",
+
+        "grid",
+        "text-[30px]",
+      )}
+      style={{ color }}
+    >
       <Icon icon={icon} />
     </div>
   );

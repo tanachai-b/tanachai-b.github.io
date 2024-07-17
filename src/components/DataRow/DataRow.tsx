@@ -15,23 +15,31 @@ export function DataRow({
   return (
     <div
       className={cx(
-        "flex",
-        "flex-row",
-        "gap-[10px]",
+        "grid",
+        "grid-cols-[auto_1fr]",
+
+        "gap-x-[10px]",
+        "gap-y-[5px]",
 
         "mb-[20px]",
       )}
     >
       <RowIcon icon={icon} color={color} />
 
-      <div className={cx("flex", "flex-col", "gap-[5px]")}>
-        <RowDetails title={title} subtitle={`/${path}`} />
+      <RowDetails title={title} subtitle={`/${path}`} />
 
-        <div className={cx("flex", "flex-row", "gap-[10px]")}>
-          <RowLink label="GitHub" href={`https://github.com/tanachai-b/${path}`} />
+      <div
+        className={cx(
+          "col-start-2",
 
-          <RowLink label="Website" href={`https://tanachai-b.github.io/${path}`} />
-        </div>
+          "flex",
+          "flex-row",
+          "gap-[10px]",
+        )}
+      >
+        <RowLink label="GitHub" href={`https://github.com/tanachai-b/${path}`} />
+
+        <RowLink label="Website" href={`https://tanachai-b.github.io/${path}`} />
       </div>
     </div>
   );

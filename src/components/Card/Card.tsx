@@ -1,6 +1,6 @@
 import cx from "classnames";
 import { ReactNode, useState } from "react";
-import { ObserveResize } from "src/common-components";
+import { Resizable } from "src/common-components";
 import { CardHeader } from "./CardHeader";
 
 export function Card({
@@ -42,39 +42,38 @@ function Container({
   const isLargeScreen = width >= 400;
 
   return (
-    <div className={cx("grow")}>
-      <ObserveResize
-        onResize={({ width }) => {
-          setWidth(width);
-          onResize(width);
-        }}
+    <Resizable
+      className={cx("grow")}
+      onResize={({ width }) => {
+        setWidth(width);
+        onResize(width);
+      }}
+    >
+      <div
+        className={cx(
+          "size-full",
+
+          { "p-[20px]": isLargeScreen },
+
+          "grid",
+          isLargeScreen ? "place-items-center" : "place-items-stretch",
+        )}
       >
         <div
           className={cx(
-            "size-full",
+            "bg-[#101010]",
 
-            { "p-[20px]": isLargeScreen },
+            { "rounded-[10px]": isLargeScreen },
 
-            "grid",
-            isLargeScreen ? "place-items-center" : "place-items-stretch",
+            "flex",
+            "flex-col",
+
+            "overflow-clip",
           )}
         >
-          <div
-            className={cx(
-              "bg-[#101010]",
-
-              { "rounded-[10px]": isLargeScreen },
-
-              "flex",
-              "flex-col",
-
-              "overflow-clip",
-            )}
-          >
-            {children}
-          </div>
+          {children}
         </div>
-      </ObserveResize>
-    </div>
+      </div>
+    </Resizable>
   );
 }

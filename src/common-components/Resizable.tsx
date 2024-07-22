@@ -1,10 +1,11 @@
-import cx from "classnames";
 import { ReactNode, useEffect, useRef } from "react";
 
-export function ObserveResize({
+export function Resizable({
+  className,
   onResize,
   children,
 }: {
+  className?: string;
   onResize: (boundingClientRect: DOMRect) => void;
   children: ReactNode;
 }) {
@@ -23,7 +24,7 @@ export function ObserveResize({
   }, [onResize]);
 
   return (
-    <div ref={ref} className={cx("size-full")}>
+    <div ref={ref} className={className}>
       {children}
     </div>
   );

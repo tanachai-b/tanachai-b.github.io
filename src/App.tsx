@@ -37,11 +37,11 @@ export default function App() {
 
           <DataRow icon="keyboard" color="#6000ff" title="Thai Keyboard" path="thai-keyboard" />
 
-          <DataRow icon="calendar_month" color="#ff40e0" title="Next.js" path="calendar" />
+          <DataRow icon="code" color="#ff40e0" title="Next.js" path="next-js-projects" />
         </div>
 
         <div className={cx("break-inside-avoid")}>
-          <DataHeader title="Plain Javscript" />
+          <DataHeader title="Plain Javascript" />
 
           <DataRow icon="deployed_code" color="#00c0ff" title="Equations 3D" path="equations-3d" />
 
@@ -51,14 +51,37 @@ export default function App() {
             title="Starship Command"
             path="starship-command"
           />
+        </div>
 
-          <DataRow icon="public" color="#6000ff" title="Orbit Lines" path="orbit-lines" />
+        <div className={cx("break-inside-avoid")}>
+          <DataHeader title="Archived / Unfinished" />
+
+          <DataRow
+            icon="public"
+            color="#404040"
+            title="Orbit Lines (Unfinished)"
+            path="orbit-lines"
+          />
 
           <DataRow
             icon="directions_car"
-            color="#ff0000"
-            title="Car Simulator"
+            color="#404040"
+            title="Car Simulator (Unfinished)"
             path="car-simulator"
+          />
+
+          <DataRow
+            icon="calendar_month"
+            color="#404040"
+            title="Diary Reader (Empty)"
+            path="diary-reader"
+          />
+
+          <DataRow
+            icon="palette"
+            color="#404040"
+            title="Color Palette (Archived)"
+            path="color-palette"
           />
         </div>
       </Card>

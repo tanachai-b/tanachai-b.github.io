@@ -15,7 +15,7 @@ export function Card({
   children: ReactNode;
 }) {
   const [width, setWidth] = useState(0);
-  const columns = Math.min(Math.floor((width - 200) / 250), 3);
+  const columns = Math.min(Math.floor((width - (40 + 50) * 2) / 250), 3);
 
   return (
     <Container onResize={setWidth}>

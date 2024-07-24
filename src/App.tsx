@@ -20,7 +20,13 @@ export default function App() {
 
           <DataRow icon="sticky_note_2" color="#ffd000" title="Sticky Notes" path="sticky-notes" />
 
-          <DataRow icon="home" color="#c0c0c0" title="GitHub Page" path="tanachai-b.github.io" />
+          <DataRow
+            icon="home"
+            color="#c0c0c0"
+            title="GitHub Page"
+            path="tanachai-b.github.io"
+            external="https://tbun.dev"
+          />
         </div>
 
         <div className={cx("break-inside-avoid")}>

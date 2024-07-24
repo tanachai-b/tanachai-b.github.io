@@ -6,11 +6,13 @@ export function DataRow({
   color,
   title,
   path,
+  external,
 }: {
   icon: string;
   color: string;
   title: string;
   path: string;
+  external?: string;
 }) {
   return (
     <div
@@ -39,7 +41,9 @@ export function DataRow({
       >
         <RowLink label="GitHub" href={`https://github.com/tanachai-b/${path}`} />
 
-        <RowLink label="Website" href={`https://tanachai-b.github.io/${path}`} />
+        <RowLink label="Page" href={`https://tanachai-b.github.io/${path}`} />
+
+        <RowLink label="External" href={external != null ? external : `https://${path}.tbun.dev`} />
       </div>
     </div>
   );

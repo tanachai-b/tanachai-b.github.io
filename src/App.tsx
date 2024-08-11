@@ -27,7 +27,7 @@ export default function App() {
             title="GitHub Page"
             repo="tanachai-b.github.io"
             page="https://tanachai-b.github.io"
-            external="https://tbun.dev"
+            external="https://directories.tbun.dev"
           />
 
           <DataRow icon="sticky_note_2" color="#ffd000" title="Sticky Notes" repo="sticky-notes" />

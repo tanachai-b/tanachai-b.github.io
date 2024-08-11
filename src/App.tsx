@@ -23,6 +23,14 @@ export default function App() {
 
           <DataRow
             icon="home"
+            color="#ffd000"
+            title="tbun.dev"
+            repo="tbun-dev"
+            external="https://tbun.dev"
+          />
+
+          <DataRow
+            icon="frame_source"
             color="#c0c0c0"
             title="GitHub Page"
             repo="tanachai-b.github.io"

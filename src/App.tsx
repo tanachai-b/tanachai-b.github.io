@@ -21,10 +21,6 @@ export default function App() {
         <div className={cx("break-inside-avoid")}>
           <DataHeader title="Vite.js - React - Typescript" />
 
-          <DataRow icon="palette" color="#ff6000" title="Color Swatches" repo="color-swatches" />
-
-          <DataRow icon="sticky_note_2" color="#ffd000" title="Sticky Notes" repo="sticky-notes" />
-
           <DataRow
             icon="home"
             color="#c0c0c0"
@@ -33,6 +29,10 @@ export default function App() {
             page="https://tanachai-b.github.io"
             external="https://tbun.dev"
           />
+
+          <DataRow icon="sticky_note_2" color="#ffd000" title="Sticky Notes" repo="sticky-notes" />
+
+          <DataRow icon="palette" color="#ff6000" title="Color Swatches" repo="color-swatches" />
         </div>
 
         <div className={cx("break-inside-avoid")}>

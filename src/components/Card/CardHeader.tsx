@@ -1,6 +1,5 @@
 import cx from "classnames";
 import { ReactNode } from "react";
-import { Link } from "src/common-components";
 
 export function CardHeader({
   title,
@@ -44,13 +43,7 @@ export function CardHeader({
           {title}
         </div>
 
-        <div className={cx("flex", "flex-col", "items-center")}>
-          <div className={cx("text-[#606060]", "text-[13px]")}>{subtitle}</div>
-
-          <div className={cx("text-[#606060]", "text-[13px]")}>
-            <Link label="tbun.dev" href="https://tbun.dev" />
-          </div>
-        </div>
+        <div className={cx("text-[#606060]", "text-[13px]")}>{subtitle}</div>
       </div>
     </div>
   );

@@ -10,21 +10,27 @@ export default function App() {
     <Container onScroll={setScroll}>
       <Card
         title="tanachai-b"
-        subtitle={<Link label="github.com/tanachai-b" href="https://github.com/tanachai-b" />}
+        subtitle={
+          <div className={cx("flex", "flex-col", "items-center")}>
+            <Link label="github.com/tanachai-b" href="https://github.com/tanachai-b" />
+            <Link label="tbun.dev" href="https://tbun.dev" />
+          </div>
+        }
         scroll={scroll}
       >
         <div className={cx("break-inside-avoid")}>
           <DataHeader title="Vite.js - React - Typescript" />
 
-          <DataRow icon="palette" color="#ff6000" title="Color Swatches" path="color-swatches" />
+          <DataRow icon="palette" color="#ff6000" title="Color Swatches" repo="color-swatches" />
 
-          <DataRow icon="sticky_note_2" color="#ffd000" title="Sticky Notes" path="sticky-notes" />
+          <DataRow icon="sticky_note_2" color="#ffd000" title="Sticky Notes" repo="sticky-notes" />
 
           <DataRow
             icon="home"
             color="#c0c0c0"
             title="GitHub Page"
-            path="tanachai-b.github.io"
+            repo="tanachai-b.github.io"
+            page="https://tanachai-b.github.io"
             external="https://tbun.dev"
           />
         </div>
@@ -36,26 +42,26 @@ export default function App() {
             icon="account_balance"
             color="#00c080"
             title="Personal Finance"
-            path="personal-finance"
+            repo="personal-finance"
           />
 
-          <DataRow icon="watch" color="#80ff00" title="Watch Face" path="watch-face" />
+          <DataRow icon="watch" color="#80ff00" title="Watch Face" repo="watch-face" />
 
-          <DataRow icon="keyboard" color="#6000ff" title="Thai Keyboard" path="thai-keyboard" />
+          <DataRow icon="keyboard" color="#6000ff" title="Thai Keyboard" repo="thai-keyboard" />
 
-          <DataRow icon="code" color="#ff40e0" title="Next.js" path="next-js-projects" />
+          <DataRow icon="code" color="#ff40e0" title="Next.js" repo="next-js-projects" />
         </div>
 
         <div className={cx("break-inside-avoid")}>
           <DataHeader title="Plain Javascript" />
 
-          <DataRow icon="deployed_code" color="#00c0ff" title="Equations 3D" path="equations-3d" />
+          <DataRow icon="deployed_code" color="#00c0ff" title="Equations 3D" repo="equations-3d" />
 
           <DataRow
             icon="rocket_launch"
             color="#0000ff"
             title="Starship Command"
-            path="starship-command"
+            repo="starship-command"
           />
         </div>
 
@@ -66,28 +72,28 @@ export default function App() {
             icon="public"
             color="#404040"
             title="Orbit Lines (Unfinished)"
-            path="orbit-lines"
+            repo="orbit-lines"
           />
 
           <DataRow
             icon="directions_car"
             color="#404040"
             title="Car Simulator (Unfinished)"
-            path="car-simulator"
+            repo="car-simulator"
           />
 
           <DataRow
             icon="calendar_month"
             color="#404040"
             title="Diary Reader (Empty)"
-            path="diary-reader"
+            repo="diary-reader"
           />
 
           <DataRow
             icon="palette"
             color="#404040"
             title="Color Palette (Archived)"
-            path="color-palette"
+            repo="color-palette"
           />
         </div>
       </Card>

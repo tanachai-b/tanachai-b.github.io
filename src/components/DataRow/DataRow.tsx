@@ -5,13 +5,15 @@ export function DataRow({
   icon,
   color,
   title,
-  path,
+  repo,
+  page,
   external,
 }: {
   icon: string;
   color: string;
   title: string;
-  path: string;
+  repo: string;
+  page?: string;
   external?: string;
 }) {
   return (
@@ -28,7 +30,7 @@ export function DataRow({
     >
       <RowIcon icon={icon} color={color} />
 
-      <RowDetails title={title} subtitle={`/${path}`} />
+      <RowDetails title={title} subtitle={`/${repo}`} />
 
       <div
         className={cx(
@@ -39,11 +41,11 @@ export function DataRow({
           "gap-[10px]",
         )}
       >
-        <RowLink label="GitHub" href={`https://github.com/tanachai-b/${path}`} />
+        <RowLink label="GitHub" href={`https://github.com/tanachai-b/${repo}`} />
 
-        <RowLink label="Page" href={`https://tanachai-b.github.io/${path}`} />
+        <RowLink label="Page" href={page ?? `https://tanachai-b.github.io/${repo}`} />
 
-        <RowLink label="External" href={external != null ? external : `https://${path}.tbun.dev`} />
+        <RowLink label="External" href={external ?? `https://${repo}.tbun.dev`} />
       </div>
     </div>
   );

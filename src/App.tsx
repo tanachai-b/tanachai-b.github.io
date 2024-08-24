@@ -1,5 +1,6 @@
 import cx from "classnames";
 import { useState } from "react";
+import { github_icon, tbun_icon } from "./assets";
 import { Link } from "./common-components";
 import { Card, Container, Copyright, DataHeader, DataRow } from "./components";
 
@@ -22,20 +23,18 @@ export default function App() {
           <DataHeader title="Vite.js - React - Typescript" />
 
           <DataRow
-            icon="home"
-            color="#ffd000"
-            title="tbun.dev"
-            repo="tbun-dev"
-            external="https://tbun.dev"
-          />
-
-          <DataRow
-            icon="frame_source"
-            color="#c0c0c0"
+            image={github_icon}
             title="GitHub Page"
             repo="tanachai-b.github.io"
             page="https://tanachai-b.github.io"
             external="https://directories.tbun.dev"
+          />
+
+          <DataRow
+            image={tbun_icon}
+            title="TBUN.dev"
+            repo="tbun-dev"
+            external="https://www.tbun.dev"
           />
 
           <DataRow icon="sticky_note_2" color="#ffd000" title="Sticky Notes" repo="sticky-notes" />

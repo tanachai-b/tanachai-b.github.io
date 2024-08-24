@@ -4,13 +4,23 @@ import { RowDetails, RowIcon, RowLink } from "./components";
 export function DataRow({
   icon,
   color,
+  image,
   title,
   repo,
   page,
   external,
-}: {
-  icon: string;
-  color: string;
+}: (
+  | {
+      icon: string;
+      color: string;
+      image?: undefined;
+    }
+  | {
+      icon?: undefined;
+      color?: undefined;
+      image: string;
+    }
+) & {
   title: string;
   repo: string;
   page?: string;
@@ -28,7 +38,9 @@ export function DataRow({
         "mb-[20px]",
       )}
     >
-      <RowIcon icon={icon} color={color} />
+      {icon != null && <RowIcon icon={icon} color={color} />}
+
+      {image != null && <img src={image} width={30} />}
 
       <RowDetails title={title} subtitle={`/${repo}`} />
 

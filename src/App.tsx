@@ -1,3 +1,4 @@
+import cx from "classnames";
 import { useState } from "react";
 import { Link } from "./common-components";
 import {
@@ -22,11 +23,16 @@ export default function App() {
       <Body isLargeScreen={isLargeScreen}>
         <Card isLargeScreen={isLargeScreen}>
           <CardHeader
-            title={"tanachai-b"}
+            title={
+              <>
+                <div>tanachai-b</div>
+                <div className={cx("text-[12px]")}>GitHub Directories</div>
+              </>
+            }
             subtitle={
               <>
-                <Link label="github.com/tanachai-b" href="https://github.com/tanachai-b" />
-                <Link label="tbun.dev" href="https://tbun.dev" />
+                <Link label="GitHub" href="https://github.com/tanachai-b" />
+                <Link label="TBUN.dev" href="https://tbun.dev" />
               </>
             }
           />

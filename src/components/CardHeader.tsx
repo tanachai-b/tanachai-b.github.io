@@ -1,15 +1,10 @@
 import cx from "classnames";
 import { ReactNode } from "react";
+import { useWindowScroll } from "src/common-hooks";
 
-export function CardHeader({
-  title,
-  subtitle,
-  scroll,
-}: {
-  title: string;
-  subtitle: ReactNode;
-  scroll: number;
-}) {
+export function CardHeader({ title, subtitle }: { title: string; subtitle: ReactNode }) {
+  const { scroll } = useWindowScroll();
+
   const maxHeight = 150;
   const minHeight = 80;
   const height = Math.max(maxHeight - scroll, minHeight);
@@ -19,18 +14,11 @@ export function CardHeader({
   const fontSize = lerp(20, 30, factor);
 
   return (
-    <div
-      className={cx(
-        "sticky",
-        "top-[0px]",
-
-        "flex",
-        "flex-col",
-      )}
-      style={{ minHeight: `${maxHeight}px` }}
-    >
+    <div className={cx("sticky", "top-[0px]", "invisible")} style={{ height: `${maxHeight}px` }}>
       <div
         className={cx(
+          "visible",
+
           "bg-[#101010]",
 
           "grid",
@@ -43,7 +31,18 @@ export function CardHeader({
           {title}
         </div>
 
-        <div className={cx("text-[#606060]", "text-[13px]")}>{subtitle}</div>
+        <div
+          className={cx(
+            "flex",
+            "flex-col",
+            "items-center",
+
+            "text-[#606060]",
+            "text-[13px]",
+          )}
+        >
+          {subtitle}
+        </div>
       </div>
     </div>
   );

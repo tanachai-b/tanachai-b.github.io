@@ -1,109 +1,57 @@
 import cx from "classnames";
 import { useState } from "react";
-import { github_icon, tbun_icon } from "./assets";
 import { Link } from "./common-components";
-import { Card, Container, Copyright, DataHeader, DataRow } from "./components";
+import {
+  Body,
+  Card,
+  CardBody,
+  CardHeader,
+  Container,
+  Copyright,
+  Repo,
+  RepoGroupHeader,
+} from "./components";
+import { repoGroups } from "./data";
 
 export default function App() {
-  const [scroll, setScroll] = useState<number>(0);
+  const [width, setWidth] = useState(0);
+
+  const isLargeScreen = width >= 400;
+  const columns = Math.min(Math.floor((width - (40 + 50) * 2) / 250), 3);
 
   return (
-    <Container onScroll={setScroll}>
-      <Card
-        title="tanachai-b"
-        subtitle={
-          <div className={cx("flex", "flex-col", "items-center")}>
-            <Link label="github.com/tanachai-b" href="https://github.com/tanachai-b" />
-            <Link label="tbun.dev" href="https://tbun.dev" />
-          </div>
-        }
-        scroll={scroll}
-      >
-        <div className={cx("break-inside-avoid")}>
-          <DataHeader title="Vite.js - React - Typescript" />
-
-          <DataRow
-            image={github_icon}
-            title="GitHub Page"
-            repo="tanachai-b.github.io"
-            page="https://tanachai-b.github.io"
-            external="https://directories.tbun.dev"
+    <Container onResize={setWidth}>
+      <Body isLargeScreen={isLargeScreen}>
+        <Card isLargeScreen={isLargeScreen}>
+          <CardHeader
+            title={"tanachai-b"}
+            subtitle={
+              <>
+                <Link label="github.com/tanachai-b" href="https://github.com/tanachai-b" />
+                <Link label="tbun.dev" href="https://tbun.dev" />
+              </>
+            }
           />
 
-          <DataRow
-            image={tbun_icon}
-            title="TBUN.dev"
-            repo="tbun-dev"
-            external="https://www.tbun.dev"
-          />
+          <CardBody columns={columns}>
+            {repoGroups.map((repoGroup) => (
+              <div className={cx("break-inside-avoid")}>
+                <RepoGroupHeader>{repoGroup.name} </RepoGroupHeader>
 
-          <DataRow icon="sticky_note_2" color="#ffd000" title="Sticky Notes" repo="sticky-notes" />
-
-          <DataRow icon="palette" color="#ff6000" title="Color Swatches" repo="color-swatches" />
-        </div>
-
-        <div className={cx("break-inside-avoid")}>
-          <DataHeader title="Next.js - React - Typescript" />
-
-          <DataRow
-            icon="account_balance"
-            color="#00c080"
-            title="Personal Finance"
-            repo="personal-finance"
-          />
-
-          <DataRow icon="watch" color="#80ff00" title="Watch Face" repo="watch-face" />
-
-          <DataRow icon="keyboard" color="#6000ff" title="Thai Keyboard" repo="thai-keyboard" />
-
-          <DataRow icon="code" color="#ff40e0" title="Next.js" repo="next-js-projects" />
-        </div>
-
-        <div className={cx("break-inside-avoid")}>
-          <DataHeader title="Plain Javascript" />
-
-          <DataRow icon="deployed_code" color="#00c0ff" title="Equations 3D" repo="equations-3d" />
-
-          <DataRow
-            icon="rocket_launch"
-            color="#0000ff"
-            title="Starship Command"
-            repo="starship-command"
-          />
-        </div>
-
-        <div className={cx("break-inside-avoid")}>
-          <DataHeader title="Archived / Unfinished" />
-
-          <DataRow
-            icon="public"
-            color="#404040"
-            title="Orbit Lines (Unfinished)"
-            repo="orbit-lines"
-          />
-
-          <DataRow
-            icon="directions_car"
-            color="#404040"
-            title="Car Simulator (Unfinished)"
-            repo="car-simulator"
-          />
-
-          <DataRow
-            icon="calendar_month"
-            color="#404040"
-            title="Diary Reader (Empty)"
-            repo="diary-reader"
-          />
-
-          <DataRow
-            icon="palette"
-            color="#404040"
-            title="Color Palette (Archived)"
-            repo="color-palette"
-          />
-        </div>
-      </Card>
+                {repoGroup.repos.map((repo) => (
+                  <Repo
+                    icon={repo.icon}
+                    name={repo.name}
+                    repo={repo.repo}
+                    page={repo.page}
+                    external={repo.external}
+                  />
+                ))}
+              </div>
+            ))}
+          </CardBody>
+        </Card>
+      </Body>
 
       <Copyright />
     </Container>

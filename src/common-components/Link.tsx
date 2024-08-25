@@ -1,11 +1,10 @@
 import cx from "classnames";
+import { ReactNode } from "react";
 import { Icon } from "./Icon";
 
-export function Link({ label, href }: { label: string; href: string }) {
+export function Link({ label, href }: { label: ReactNode; href: string }) {
   return (
     <a
-      href={href}
-      target="_blank"
       className={cx(
         "flex",
         "flex-row",
@@ -16,6 +15,8 @@ export function Link({ label, href }: { label: string; href: string }) {
         "hover:text-[#a0a0a0]",
         "transition-all",
       )}
+      href={href}
+      target="_blank"
     >
       {label}
 

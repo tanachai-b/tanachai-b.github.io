@@ -1,4 +1,3 @@
-import cx from "classnames";
 import { useState } from "react";
 import { Link } from "./common-components";
 import {
@@ -17,7 +16,6 @@ export default function App() {
   const [width, setWidth] = useState(0);
 
   const isLargeScreen = width >= 400;
-  const columns = Math.min(Math.floor((width - (40 + 50) * 2) / 250), 3);
 
   return (
     <Container onResize={setWidth}>
@@ -33,9 +31,9 @@ export default function App() {
             }
           />
 
-          <CardBody columns={columns}>
+          <CardBody>
             {repoGroups.map((repoGroup) => (
-              <div className={cx("break-inside-avoid")}>
+              <>
                 <RepoGroupHeader>{repoGroup.name} </RepoGroupHeader>
 
                 {repoGroup.repos.map((repo) => (
@@ -47,7 +45,7 @@ export default function App() {
                     external={repo.external}
                   />
                 ))}
-              </div>
+              </>
             ))}
           </CardBody>
         </Card>

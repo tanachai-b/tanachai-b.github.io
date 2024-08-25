@@ -19,12 +19,10 @@ export function Repo({
     <div
       className={cx(
         "grid",
-        "grid-cols-[auto_1fr]",
+        "grid-cols-[30px_1fr]",
 
         "gap-x-[10px]",
         "gap-y-[5px]",
-
-        "mb-[20px]",
       )}
     >
       {icon}

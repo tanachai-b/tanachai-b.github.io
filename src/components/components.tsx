@@ -44,6 +44,9 @@ export function Card({ isLargeScreen, children }: { isLargeScreen: boolean; chil
   return (
     <div
       className={cx(
+        "w-full",
+        "max-w-[1000px]",
+
         "bg-[#101010]",
         isLargeScreen ? "rounded-[10px]" : "",
 
@@ -58,11 +61,18 @@ export function Card({ isLargeScreen, children }: { isLargeScreen: boolean; chil
   );
 }
 
-export function CardBody({ columns, children }: { columns: number; children: ReactNode }) {
+export function CardBody({ children }: { children: ReactNode }) {
   return (
     <div
-      className={cx("p-[50px]", "pt-[0px]")}
-      style={{ columnCount: columns, columnWidth: "250px" }}
+      className={cx(
+        "p-[50px]",
+        "pt-[0px]",
+
+        "grid",
+        "grid-cols-[repeat(auto-fit,_minmax(250px,1fr))]",
+
+        "gap-[10px]",
+      )}
     >
       {children}
     </div>
@@ -73,7 +83,10 @@ export function RepoGroupHeader({ children }: { children: ReactNode }) {
   return (
     <div
       className={cx(
-        "py-[20px]",
+        "col-span-full",
+
+        "pt-[30px]",
+        "pb-[10px]",
 
         "text-[#606060]",
         "text-[13px]",

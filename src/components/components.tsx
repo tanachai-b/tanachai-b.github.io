@@ -33,6 +33,8 @@ export function Body({ isLargeScreen, children }: { isLargeScreen: boolean; chil
 
         "grid",
         isLargeScreen ? ["p-[20px]", "place-items-center"] : "place-items-stretch",
+
+        "overflow-clip",
       )}
     >
       {children}
@@ -61,15 +63,21 @@ export function Card({ isLargeScreen, children }: { isLargeScreen: boolean; chil
   );
 }
 
-export function CardBody({ children }: { children: ReactNode }) {
+export function CardBody({
+  isLargeScreen,
+  children,
+}: {
+  isLargeScreen: boolean;
+  children: ReactNode;
+}) {
   return (
     <div
       className={cx(
-        "p-[50px]",
+        isLargeScreen ? "p-[50px]" : "p-[30px]",
         "pt-[0px]",
 
-        "grid",
-        "grid-cols-[repeat(auto-fit,_minmax(250px,1fr))]",
+        "flex",
+        "flex-col",
 
         "gap-[10px]",
       )}

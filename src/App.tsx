@@ -15,7 +15,7 @@ import { repoGroups } from "./data";
 export default function App() {
   const [width, setWidth] = useState(0);
 
-  const isLargeScreen = width >= 400;
+  const isLargeScreen = width >= 500;
 
   return (
     <Container onResize={setWidth}>
@@ -31,7 +31,7 @@ export default function App() {
             }
           />
 
-          <CardBody>
+          <CardBody isLargeScreen={isLargeScreen}>
             {repoGroups.map((repoGroup) => (
               <>
                 <RepoGroupHeader>{repoGroup.name} </RepoGroupHeader>

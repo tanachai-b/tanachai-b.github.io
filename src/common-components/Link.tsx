@@ -12,7 +12,7 @@ export function Link({ label, href }: { label: ReactNode; href: string }) {
         "items-center",
         "gap-[2px]",
 
-        "hover:text-[#a0a0a0]",
+        "hover:text-[#ffffff80]",
         "transition-all",
       )}
       href={href}

@@ -70,7 +70,7 @@ export function Repo({
             "items-center",
           )}
         >
-          <div className={cx("text-[#a0a0a0]", "text-[14px]")}>{name}</div>
+          <div className={cx("text-[#ffffff80]", "text-[14px]")}>{name}</div>
 
           <a
             className={cx(
@@ -82,11 +82,11 @@ export function Repo({
 
               "gap-[2px]",
 
-              "text-[#606060]",
+              "text-[#ffffff40]",
               "text-[13px]",
               "italic",
 
-              "hover:text-[#a0a0a0]",
+              "hover:text-[#ffffff80]",
               "transition-all",
             )}
             href={`https://github.com/tanachai-b/${repo}`}
@@ -128,10 +128,10 @@ function RepoLink({ label, href }: { label: string; href: string }) {
 
         "gap-[2px]",
 
-        "text-[#606060]",
+        "text-[#ffffff40]",
         "text-[13px]",
 
-        "hover:text-[#a0a0a0]",
+        "hover:text-[#ffffff80]",
         "transition-all",
       )}
       href={href}

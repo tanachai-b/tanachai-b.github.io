@@ -17,7 +17,7 @@ export function Copyright() {
         "justify-center",
         "items-center",
 
-        "text-[#606060]",
+        "text-[#ffffff30]",
         "text-[12px]",
       )}
     >

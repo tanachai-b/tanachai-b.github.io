@@ -27,7 +27,7 @@ export function CardHeader({ title, subtitle }: { title: string; subtitle: React
         )}
         style={{ height: `${height}px` }}
       >
-        <div className={cx("text-[#a0a0a0]")} style={{ fontSize: `${fontSize}px` }}>
+        <div className={cx("text-[#ffffff80]")} style={{ fontSize: `${fontSize}px` }}>
           {title}
         </div>
 
@@ -37,7 +37,7 @@ export function CardHeader({ title, subtitle }: { title: string; subtitle: React
             "flex-col",
             "items-center",
 
-            "text-[#606060]",
+            "text-[#ffffff40]",
             "text-[13px]",
           )}
         >

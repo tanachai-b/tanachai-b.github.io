@@ -84,22 +84,22 @@ export const repoGroups: {
     name: "Archived / Unfinished",
     repos: [
       {
-        icon: <RepoIcon icon="public" color="#404040" />,
+        icon: <RepoIcon icon="public" color="#ffffff20" />,
         name: "Orbit Lines (Unfinished)",
         repo: "orbit-lines",
       },
       {
-        icon: <RepoIcon icon="directions_car" color="#404040" />,
+        icon: <RepoIcon icon="directions_car" color="#ffffff20" />,
         name: "Car Simulator (Unfinished)",
         repo: "car-simulator",
       },
       {
-        icon: <RepoIcon icon="calendar_month" color="#404040" />,
+        icon: <RepoIcon icon="calendar_month" color="#ffffff20" />,
         name: "Diary Reader (Empty)",
         repo: "diary-reader",
       },
       {
-        icon: <RepoIcon icon="palette" color="#404040" />,
+        icon: <RepoIcon icon="palette" color="#ffffff20" />,
         name: "Color Palette (Archived)",
         repo: "color-palette",
       },

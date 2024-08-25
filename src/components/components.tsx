@@ -96,7 +96,7 @@ export function RepoGroupHeader({ children }: { children: ReactNode }) {
         "pt-[30px]",
         "pb-[10px]",
 
-        "text-[#606060]",
+        "text-[#ffffffc0]",
         "text-[13px]",
         "font-bold",
       )}

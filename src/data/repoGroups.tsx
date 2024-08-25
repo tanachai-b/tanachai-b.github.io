@@ -72,6 +72,7 @@ export const repoGroups: {
         icon: <RepoIcon icon="deployed_code" color="#00c0ff" />,
         name: "Equations 3D",
         repo: "equations-3d",
+        external: "https://equations-3d.web.app/",
       },
       {
         icon: <RepoIcon icon="rocket_launch" color="#0000ff" />,

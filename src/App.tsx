@@ -1,4 +1,3 @@
-import cx from "classnames";
 import { useState } from "react";
 import { Link } from "./common-components";
 import {
@@ -9,6 +8,7 @@ import {
   Container,
   Copyright,
   Repo,
+  RepoGroup,
   RepoGroupHeader,
 } from "./components";
 import { repoGroups } from "./data";
@@ -23,27 +23,24 @@ export default function App() {
       <Body isLargeScreen={isLargeScreen}>
         <Card isLargeScreen={isLargeScreen}>
           <CardHeader
-            title={
+            title="tanachai-b"
+            subtitle="GitHub Directories"
+            links={
               <>
-                <div>tanachai-b</div>
-                <div className={cx("text-[12px]")}>GitHub Directories</div>
-              </>
-            }
-            subtitle={
-              <>
-                <Link label="GitHub" href="https://github.com/tanachai-b" />
-                <Link label="TBUN.dev" href="https://tbun.dev" />
+                <Link href="https://github.com/tanachai-b">GitHub</Link>
+                <Link href="https://www.tbun.dev">TBUN.dev</Link>
               </>
             }
           />
 
           <CardBody isLargeScreen={isLargeScreen}>
-            {repoGroups.map((repoGroup) => (
-              <>
+            {repoGroups.map((repoGroup, index) => (
+              <RepoGroup key={index}>
                 <RepoGroupHeader>{repoGroup.name} </RepoGroupHeader>
 
-                {repoGroup.repos.map((repo) => (
+                {repoGroup.repos.map((repo, index) => (
                   <Repo
+                    key={index}
                     icon={repo.icon}
                     name={repo.name}
                     repo={repo.repo}
@@ -51,7 +48,7 @@ export default function App() {
                     external={repo.external}
                   />
                 ))}
-              </>
+              </RepoGroup>
             ))}
           </CardBody>
         </Card>

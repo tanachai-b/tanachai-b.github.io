@@ -74,8 +74,23 @@ export function CardBody({
     <div
       className={cx(
         isLargeScreen ? "p-[50px]" : "p-[30px]",
-        "pt-[0px]",
+        "pt-[10px]",
 
+        "flex",
+        "flex-col",
+
+        "gap-[50px]",
+      )}
+    >
+      {children}
+    </div>
+  );
+}
+
+export function RepoGroup({ children }: { children: ReactNode }) {
+  return (
+    <div
+      className={cx(
         "flex",
         "flex-col",
 
@@ -91,10 +106,17 @@ export function RepoGroupHeader({ children }: { children: ReactNode }) {
   return (
     <div
       className={cx(
-        "col-span-full",
+        "sticky",
+        "top-[90px]",
 
-        "pt-[30px]",
-        "pb-[10px]",
+        "w-fit",
+
+        "bg-[#10101080]",
+        "backdrop-blur-[10px]",
+        "shadow-[0_10px_20px_0_#101010]",
+
+        "rounded-[10px]",
+        "p-[5px]",
 
         "text-[#ffffffc0]",
         "text-[13px]",

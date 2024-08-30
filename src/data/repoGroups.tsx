@@ -38,6 +38,11 @@ export const repoGroups: {
         name: "Color Swatches",
         repo: "color-swatches",
       },
+      {
+        icon: <RepoIcon icon="paid" color="#00a080" />,
+        name: "Cheapest!",
+        repo: "cheapest",
+      },
     ],
   },
   {
